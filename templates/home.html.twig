@@ -4,9 +4,20 @@
 
     <h1> Welcome, página home </h1>
 
+    {{ dump(errors) }}
+
     <div>
         {{ form(form) }}
+
+        
     </div>
+    
+    <div>
+        {% for error in errors %}
+            <p>{{ error.message }}</p>
+        {% endfor %}
+    </div>
+    
 
     <div>
         {% for comment in comments %}

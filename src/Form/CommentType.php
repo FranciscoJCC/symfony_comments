@@ -17,7 +17,8 @@ class CommentType extends AbstractType
         $builder
             ->add('body', TextareaType::class, [
                 'help' => 'Puedes escribir en Markdown',
-                'label' => 'Comentario, tips ...'
+                'label' => 'Comentario, tips ...',
+                'required' => false,
             ])
             ->add('Guardar', SubmitType::class)
         ;
