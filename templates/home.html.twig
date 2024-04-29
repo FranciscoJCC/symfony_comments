@@ -2,26 +2,25 @@
 
 {% block body %}
 
-    <h1 class="text-center"> Welcome, página home </h1>
+    
+    {# {{ dump(errors) }} #}
 
-    {{ dump(errors) }}
-
-    <div>
+    <div class="p-4 mx-5 mb-4 bg-light rounded-3">
         {{ form(form) }}
 
-        
+        <div>
+            {% for error in errors %}
+                <p>{{ error.message }}</p>
+            {% endfor %}
+        </div>
     </div>
     
-    <div>
-        {% for error in errors %}
-            <p>{{ error.message }}</p>
-        {% endfor %}
-    </div>
+    
     
 
-    <div>
+    <div class="px-5 mb-4">
         {% for comment in comments %}
-            <p>{{ comment.body }}</p>
+            <p class="py-3 border-bottom">{{ comment.body | markdown_to_html }}</p>
         {% endfor %}
     </div>
 
